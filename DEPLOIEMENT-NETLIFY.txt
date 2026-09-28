@@ -9,8 +9,8 @@ PUBLICATION SUR NETLIFY — CVTemplatePro
 
 PAIEMENT
 Le site affiche :
-+228 98 28 20 62
-+228 91 29 43 45
+Moov Money — +228 98 28 20 62
+Mix by Yas — +228 91 29 43 45
 
 La version actuelle demande au client d'effectuer le transfert puis prévoit une vérification manuelle.
 Pour automatiser la confirmation des paiements et l'envoi des fichiers, il faudra connecter une API/prestataire Mobile Money adapté.
