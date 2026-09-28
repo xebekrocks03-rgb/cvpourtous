@@ -41,6 +41,18 @@ function renderCart(){
 function openCart(){ $("#cartDrawer").classList.add("open");$("#overlay").classList.add("show");$("#cartDrawer").setAttribute("aria-hidden","false")}
 function closeCart(){ $("#cartDrawer").classList.remove("open");$("#overlay").classList.remove("show");$("#cartDrawer").setAttribute("aria-hidden","true")}
 function toast(msg){let t=$("#toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2200)}
+function openPaymentModal(total,ref){
+  $("#paymentAmount").textContent=money(total);
+  $("#orderRef").textContent=ref;
+  const msg=encodeURIComponent("Bonjour, je viens d'effectuer un paiement pour la commande "+ref+" ("+money(total)+").");
+  $("#contactSeller").href="https://wa.me/22898282062?text="+msg;
+  $("#paymentModal").classList.remove("hidden");
+  $("#overlay").classList.add("show");
+}
+function closePaymentModal(){ $("#paymentModal").classList.add("hidden");$("#overlay").classList.remove("show") }
+function copyToClipboard(text){
+  navigator.clipboard.writeText(text).then(()=>toast("Copié : "+text)).catch(()=>toast("Impossible de copier"));
+}
 function selectCat(cat){
  state.cat=cat; $$(".filter").forEach(b=>b.classList.toggle("active",b.dataset.cat===cat));
  renderProducts(); $("#catalogue").scrollIntoView({behavior:"smooth",block:"start"});
@@ -49,11 +61,17 @@ $$("[data-cat]").forEach(el=>el.addEventListener("click",e=>{e.preventDefault();
 $("#searchInput").addEventListener("input",e=>{state.query=e.target.value;renderProducts()});
 $("#searchBtn").onclick=()=>{$("#catalogue").scrollIntoView({behavior:"smooth"})};
 $("#sort").onchange=e=>{state.sort=e.target.value;renderProducts()};
-$("#cartOpen").onclick=openCart;$("#cartClose").onclick=closeCart;$("#overlay").onclick=closeCart;
+$("#cartOpen").onclick=openCart;$("#cartClose").onclick=closeCart;
+$("#overlay").onclick=()=>{closeCart();closePaymentModal()};
+$("#paymentClose").onclick=closePaymentModal;
+$$("[data-copy]").forEach(b=>b.onclick=()=>copyToClipboard(b.dataset.copy));
+$("#copyOrderRef").onclick=()=>copyToClipboard($("#orderRef").textContent);
 $("#checkout").onclick=()=>{
   if(!state.cart.length){toast("Votre panier est vide");return}
   const total=state.cart.map(id=>products.find(p=>p.id===id)).filter(Boolean).reduce((s,p)=>s+p.price,0);
-  alert("PAIEMENT MOBILE MONEY\n\nMontant : "+money(total)+"\n\nEnvoyez le montant à l’un de ces numéros :\n• +228 98 28 20 62\n• +228 91 29 43 45\n\nAprès le transfert, le paiement devra être vérifié avant l’envoi du fichier.\n\nRéférence : CVTP-"+Date.now().toString().slice(-6));
+  const ref="CVTP-"+Date.now().toString().slice(-6);
+  closeCart();
+  openPaymentModal(total,ref);
 };
 $("#newsletter").onsubmit=e=>{e.preventDefault();toast("Merci ! Vous êtes inscrit à la newsletter.");e.target.reset()};
 renderProducts();renderCart();

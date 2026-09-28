@@ -30,7 +30,7 @@ Les prix et coordonnées affichés ici sont des exemples de maquette.
 
 
 ## Paiement Mobile Money (instructions manuelles)
-Le bouton de paiement affiche les numéros fournis par le propriétaire et crée une référence de commande. Le client doit transférer manuellement le montant puis contacter le vendeur sur WhatsApp. Aucun transfert n'est initié par le site, le paiement n'est pas vérifié automatiquement et les fichiers ne sont pas livrés automatiquement.
+Le bouton de paiement affiche deux moyens de paiement, chacun avec son numéro dédié : Moov Money (+228 98 28 20 62) et Mix by Yas (+228 91 29 43 45), et crée une référence de commande. Le client doit transférer manuellement le montant via l'un de ces moyens puis contacter le vendeur sur WhatsApp. Aucun transfert n'est initié par le site, le paiement n'est pas vérifié automatiquement et les fichiers ne sont pas livrés automatiquement.
 
 ## Publication
 Le site est statique et peut être publié sur un hébergeur comme Netlify, Vercel ou GitHub Pages. La publication réelle nécessite de téléverser ce dossier sur un compte d'hébergement et, si souhaité, de connecter un nom de domaine. Ne présentez pas les paiements comme automatiquement sécurisés tant qu'un prestataire de paiement n'est pas intégré.
