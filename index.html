@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="CVTemplatePro — CV, lettres de motivation et templates professionnels prêts à télécharger.">
+  <title>CVTemplatePro — Des modèles qui font la différence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">
+    <div>✦ Des modèles professionnels pour booster votre carrière et votre business</div>
+    <div class="top-links"><span>⇩ Téléchargement instantané</span><span>▣ Paiement sécurisé</span><span>◉ Support 24/7</span></div>
+  </div>
+
+  <header class="header">
+    <a class="brand" href="#accueil">
+      <span class="brand-mark">▤</span>
+      <span><b>CVTemplate</b><strong>Pro</strong><small>Vos documents, votre succès</small></span>
+    </a>
+    <div class="search">
+      <input id="searchInput" type="search" placeholder="Rechercher un CV, un template, un document..." aria-label="Rechercher">
+      <button id="searchBtn" aria-label="Rechercher">⌕</button>
+    </div>
+    <div class="header-actions">
+      <button class="account">♙ <span>Mon compte</span>⌄</button>
+      <button id="cartOpen" class="cart">🛒 <span>Panier</span><i id="cartCount">0</i></button>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <a class="active" href="#accueil">⌂ Accueil</a>
+    <a href="#catalogue" data-cat="CV">CV & lettres de motivation</a>
+    <a href="#catalogue" data-cat="Canva">Templates Canva</a>
+    <a href="#catalogue" data-cat="Word">Templates Word</a>
+    <a href="#catalogue" data-cat="PowerPoint">Templates PowerPoint</a>
+    <a href="#catalogue" data-cat="Documents">Documents professionnels</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main id="accueil">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">VOTRE RÉUSSITE COMMENCE ICI</span>
+        <h1>Des CV et templates professionnels pour tous vos besoins</h1>
+        <p>Trouvez des modèles modernes, prêts à l’emploi et facilement modifiables pour décrocher un emploi, gagner du temps et donner une image pro à vos projets.</p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#catalogue">🛒 Découvrir nos produits</a>
+          <a class="btn ghost" href="#comment-ca-marche">▷ Voir comment ça marche</a>
+        </div>
+        <div class="checks"><span>✓ Qualité professionnelle</span><span>✓ Personnalisables</span><span>✓ Téléchargement immédiat</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card cv-card">
+          <div class="mini-avatar">JD</div><b>Jean Dupont</b><small>RESPONSABLE COMMERCIAL</small>
+          <hr><div class="lines long"></div><div class="lines"></div><div class="lines short"></div>
+          <div class="mini-grid"><div><b>Compétences</b><div class="bar"></div><div class="bar w70"></div><div class="bar w55"></div></div><div><b>Expériences</b><div class="lines"></div><div class="lines short"></div></div></div>
+        </div>
+        <div class="floating-card letter-card"><b>Lettre de motivation</b><div class="lines"></div><div class="lines"></div><div class="lines short"></div><div class="signature"></div></div>
+        <div class="laptop"><div class="screen"><b>Présentation</b><strong>Professionnelle</strong><span>Des slides qui font la différence.</span></div><div class="base"></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-head"><h2>Nos catégories</h2><a href="#catalogue">Voir toutes les catégories →</a></div>
+      <div class="category-grid">
+        <button class="category" data-cat="CV"><span>▤</span><b>CV & Lettres<br>de motivation</b><small>120+ modèles</small></button>
+        <button class="category" data-cat="Canva"><span>Ca</span><b>Templates Canva</b><small>150+ modèles</small></button>
+        <button class="category" data-cat="Word"><span>W</span><b>Templates Word</b><small>200+ modèles</small></button>
+        <button class="category" data-cat="PowerPoint"><span>P</span><b>Templates PowerPoint</b><small>100+ modèles</small></button>
+        <button class="category" data-cat="Documents"><span>▤</span><b>Documents professionnels</b><small>180+ modèles</small></button>
+        <button class="category" data-cat="Business"><span>▣</span><b>Business & Entrepreneuriat</b><small>90+ modèles</small></button>
+      </div>
+    </section>
+
+    <section class="section catalog" id="catalogue">
+      <div class="section-head">
+        <div><h2>Produits populaires</h2><p id="resultInfo">Les modèles les plus demandés du moment</p></div>
+        <div class="sort-wrap"><select id="sort"><option value="popular">Plus populaires</option><option value="priceAsc">Prix croissant</option><option value="priceDesc">Prix décroissant</option></select></div>
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-cat="Tous">Tous</button><button class="filter" data-cat="CV">CV</button><button class="filter" data-cat="Canva">Canva</button><button class="filter" data-cat="Word">Word</button><button class="filter" data-cat="PowerPoint">PowerPoint</button><button class="filter" data-cat="Documents">Documents</button>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+      <div id="emptyState" class="empty hidden">Aucun produit ne correspond à votre recherche.</div>
+    </section>
+
+    <section class="benefits">
+      <div><b>⚡</b><strong>Téléchargement instantané</strong><span>Recevez vos fichiers immédiatement après paiement.</span></div>
+      <div><b>♜</b><strong>Paiement sécurisé</strong><span>Vos informations sont protégées à 100%.</span></div>
+      <div><b>◉</b><strong>Service client 24/7</strong><span>Une équipe à votre écoute en permanence.</span></div>
+      <div><b>↻</b><strong>Mises à jour gratuites</strong><span>Profitez des améliorations sans frais supplémentaires.</span></div>
+      <div><b>♡</b><strong>Satisfaction garantie</strong><span>Des milliers de clients nous font confiance.</span></div>
+    </section>
+
+    <section class="section" id="comment-ca-marche">
+      <div class="section-head"><h2>Comment ça marche ?</h2><span>Simple, rapide, efficace.</span></div>
+      <div class="steps">
+        <div><em>01</em><h3>Choisissez</h3><p>Parcourez les modèles et trouvez celui qui correspond à votre besoin.</p></div>
+        <div><em>02</em><h3>Personnalisez</h3><p>Modifiez facilement les textes, couleurs, images et informations.</p></div>
+        <div><em>03</em><h3>Téléchargez</h3><p>Après paiement, récupérez instantanément votre fichier.</p></div>
+      </div>
+    </section>
+
+    <section class="section testimonials">
+      <div class="section-head"><h2>Ils nous font confiance</h2><a href="#contact">Voir tous les avis →</a></div>
+      <div class="test-grid">
+        <article><div class="stars">★★★★★</div><p>« J’ai trouvé un CV parfait sur ce site. J’ai pu décrocher mon entretien très rapidement. »</p><b>Aminata D.</b><small>Étudiante</small></article>
+        <article><div class="stars">★★★★★</div><p>« Les templates sont propres, modernes et très faciles à modifier. »</p><b>Koffi B.</b><small>Entrepreneur</small></article>
+        <article><div class="stars">★★★★★</div><p>« Service rapide et documents vraiment professionnels. Je reviendrai ! »</p><b>Sophie L.</b><small>Consultante</small></article>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div><b>✈ Restez informé de nos nouveautés !</b><span>Recevez nos offres spéciales, nouveaux modèles et conseils directement par e-mail.</span></div>
+      <form id="newsletter"><input type="email" required placeholder="Votre adresse e-mail"><button class="btn primary" type="submit">S’abonner</button></form>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-main">
+      <div><a class="brand footer-brand" href="#accueil"><span class="brand-mark">▤</span><span><b>CVTemplate</b><strong>Pro</strong><small>Vos documents, votre succès</small></span></a><p>La plateforme n°1 pour acheter des CV, templates et documents professionnels prêts à l’emploi.</p><div class="social">f　◎　▶　in　♪</div></div>
+      <div><h4>Liens rapides</h4><a href="#accueil">Accueil</a><a href="#catalogue">CV & Lettres</a><a href="#catalogue">Templates Canva</a><a href="#catalogue">Templates Word</a><a href="#catalogue">Templates PowerPoint</a></div>
+      <div><h4>Infos utiles</h4><a href="#comment-ca-marche">FAQ</a><a href="#">Conditions générales</a><a href="#">Politique de confidentialité</a><a href="#">Mentions légales</a><a href="#">Retour & remboursement</a></div>
+      <div><h4>Contact</h4><a href="mailto:contact@cvtemplatepro.com">✉ contact@cvtemplatepro.com</a><a href="tel:+22893123456">☎ +228 93 12 34 56</a><span>⌖ Lomé, Togo</span><strong class="footer-note">💛 Votre réussite, notre priorité !</strong></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 CVTemplatePro. Tous droits réservés.</span><span>Mobile Money : +228 98 28 20 62 • +228 91 29 43 45</span></div>
+  </footer>
+
+  <aside id="cartDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer-head"><h2>Votre panier</h2><button id="cartClose">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-total"><span>Total</span><b id="cartTotal">0 FCFA</b></div>
+    <button id="checkout" class="btn primary full">Passer au paiement</button>
+    <div class="payment-box">
+      <strong>💳 Paiement Mobile Money</strong>
+      <p>Après validation du panier, envoyez le montant à l’un des numéros suivants :</p>
+      <b>+228 98 28 20 62</b>
+      <b>+228 91 29 43 45</b>
+      <small>Le téléchargement sera délivré après vérification du transfert.</small>
+    </div>
+    <p class="secure">🔒 Paiement sécurisé • Téléchargement après vérification</p>
+  </aside>
+  <div id="overlay" class="overlay"></div>
+
+
+  <div id="paymentModal" class="payment-modal hidden" role="dialog" aria-modal="true" aria-labelledby="paymentTitle">
+    <div class="payment-box">
+      <button id="paymentClose" class="payment-close" aria-label="Fermer">×</button>
+      <span class="payment-icon">↗</span>
+      <h2 id="paymentTitle">Paiement par transfert Mobile Money</h2>
+      <p class="payment-intro">Pour finaliser votre commande, effectuez le transfert du montant total vers l’un des numéros ci-dessous, puis contactez le vendeur avec votre référence de commande.</p>
+      <div class="payment-number"><div><b>Numéro 1</b><strong>+228 98 28 20 62</strong></div><button data-copy="+228 98 28 20 62">Copier</button></div>
+      <div class="payment-number"><div><b>Numéro 2</b><strong>+228 91 29 43 45</strong></div><button data-copy="+228 91 29 43 45">Copier</button></div>
+      <div class="payment-summary"><span>Montant à transférer</span><b id="paymentAmount">0 FCFA</b></div>
+      <div class="order-reference"><span>Référence de commande</span><b id="orderRef">CVTP-000000</b><button id="copyOrderRef">Copier la référence</button></div>
+      <p class="payment-warning">Important : cette version ne vérifie pas automatiquement les transferts et ne délivre pas automatiquement les fichiers. Vérifiez le paiement avant d’envoyer les produits au client.</p>
+      <a id="contactSeller" class="btn primary full" href="https://wa.me/22898282062" target="_blank" rel="noopener">Envoyer la référence sur WhatsApp</a>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

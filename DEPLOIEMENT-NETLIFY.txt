@@ -1,0 +1,19 @@
+PUBLICATION SUR NETLIFY — CVTemplatePro
+
+1. Ouvre Netlify et connecte-toi à ton compte.
+2. Va dans "Add new project" puis "Deploy manually", ou utilise Netlify Drop.
+3. Décompresse CVTemplatePro-site-paiement.zip.
+4. Fais glisser le dossier cvtemplatepro (celui qui contient index.html) dans la zone de déploiement.
+5. Netlify publiera le site et donnera une adresse en .netlify.app.
+6. Dans Netlify, tu peux ensuite renommer le projet et connecter un nom de domaine.
+
+PAIEMENT
+Le site affiche :
++228 98 28 20 62
++228 91 29 43 45
+
+La version actuelle demande au client d'effectuer le transfert puis prévoit une vérification manuelle.
+Pour automatiser la confirmation des paiements et l'envoi des fichiers, il faudra connecter une API/prestataire Mobile Money adapté.
+
+IMPORTANT
+Ne mets jamais de clés secrètes, mots de passe ou clés API directement dans index.html ou script.js.
